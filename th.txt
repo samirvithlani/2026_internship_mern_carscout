@@ -94,3 +94,39 @@ src:
 
  router : AppRoutes.jsx
  
+
+ try catch
+
+ redirect: api -->role -->"admin" "user"
+ based on role --> redirec-->
+
+ if(role=="admin")
+         /admin
+if(role=="user")
+         /user 
+
+         
+https://www.npmjs.com/package/react-toastify
+npm i react-toastify
+https://fkhadra.github.io/react-toastify/introduction/
+
+add ToastContainer in app.jsx
+
+component lifecycle hook
+function automatically call when component load
+hook: useEffect:
+---------------
+to handle side effect in react js we will use useEffect
+
+chat[] array -> 10 msg
+componsnt --> load chat load
+
+new msg --> add in array --> useEffect call again
+
+useEffect(()=>{},[chat])
+
+
+integrate post api --> login form
+apply tosters
+useEffect : demo
+apiDemo --> get --> table format -->tailwindcss --> useEffect
