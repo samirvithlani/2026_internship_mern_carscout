@@ -130,3 +130,8 @@ integrate post api --> login form
 apply tosters
 useEffect : demo
 apiDemo --> get --> table format -->tailwindcss --> useEffect
+
+
+axios global base usrl config:
+
+
