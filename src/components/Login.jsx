@@ -14,29 +14,33 @@ export default function Login() {
     handleSubmit,
     formState: { errors }
   } = useForm();
+  
 
-  const submitHandler = async(data) => {
-
-    //{email:"",password:""}
+  const submitHandler = async(data)=>{
     try{
-      const res = await axios.post("https://node5.onrender.com/user/login",data)
-      console.log("response...",res); //axios object
-      console.log("response data...",res.data); //actual data
+      
+      const res = await axios.post("/user/login",data)
+      console.log("response..",res)
       if(res.status==200){
-        //alert("login success")
-        toast.success("login success")
-        //check role in api response..
-        navigate("/user")
+        toast.success("Login Sucess")
+        //navigation -->role based navigation
+        if(res.data.role=="user" || res.data.role=="USER"){
+          navigate("/user") //check this url must present in appRoutes for user
+        }
+        else if(res.data.role =="admin" || res.data.role=="ADMIN"){
+          navigate("/admin") //check this url must present in appRoutes for admin
+        }
+        else{
+          toast.error("Invalid Role")
+          navigate("/") //redirect again to login..
+        }
       }
-  }catch(err){
-      console.log("error...",err);
-      //alert("login failed")
-      toast.error("Login failed..")
-  }
 
-    
-    //console.log("data...",data);
-  };
+
+    }catch(err){
+      toast.error(err.response.data.message)
+    }
+  }
 
   return (
     <div className="min-h-screen flex">

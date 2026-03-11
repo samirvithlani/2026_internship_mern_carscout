@@ -38,7 +38,6 @@ export default function Signup() {
         toast.success("User registered successfully")
         navigate("/")
       }
-
     }catch(err){
       toast.error(err.response.data.message)
     }
