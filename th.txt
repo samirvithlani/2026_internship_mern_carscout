@@ -135,3 +135,7 @@ apiDemo --> get --> table format -->tailwindcss --> useEffect
 axios global base usrl config:
 
 
+productComponent --> load --> useEffect ->fetchCat--->GET --> res -->[] -->useState
+
+
+
