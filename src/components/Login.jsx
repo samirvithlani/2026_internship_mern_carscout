@@ -21,14 +21,21 @@ export default function Login() {
       
       const res = await axios.post("/user/login",data)
       console.log("response..",res)
+      console.log(res.data.role)
       if(res.status==200){
         toast.success("Login Sucess")
+        console.log("role...",res.data.role)
         //navigation -->role based navigation
+        //token
+        console.log(res.data.token) //-->permenet storage -->browser
+        localStorage.setItem("token",res.data.token)
+        localStorage.setItem("role",res.data.role)
+
         if(res.data.role=="user" || res.data.role=="USER"){
           navigate("/user") //check this url must present in appRoutes for user
         }
-        else if(res.data.role =="admin" || res.data.role=="ADMIN"){
-          navigate("/admin") //check this url must present in appRoutes for admin
+        else if(res.data.role =="owner" || res.data.role=="owner"){
+          navigate("/owner") //check this url must present in appRoutes for admin
         }
         else{
           toast.error("Invalid Role")
