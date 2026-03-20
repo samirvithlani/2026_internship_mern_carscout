@@ -34,6 +34,11 @@ export const UserNavbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/user/products" className="hover:text-blue-500">
+                Products
+              </Link>
+            </li>
+            <li>
               <button className="bg-blue-500 text-white px-4 py-1 rounded-lg hover:bg-blue-600">
                 Logout
               </button>

@@ -9,22 +9,32 @@ import { AllUserList } from "../components/admin/AllUserList";
 import { GetApiDemo } from "../components/user/GetApiDemo";
 import { UseEffectDemo } from "../components/user/UseEffectDemo";
 import { CreateProductComponent } from "../components/admin/CreateProductComponent";
+import ProtectedRoutes from "../components/ProtectedRoutes";
+import { ProductList } from "../components/user/ProductList";
 
 const router = createBrowserRouter([
     {path:"/",element:<Login/>},
     {path:"/signup",element:<Signup/>},
 
-    {path:"/user",element:<UserNavbar/>,
+    
+    {path:"/user",element:
+        <ProtectedRoutes userRoles={["user"]}>
+            <UserNavbar/>,
+        </ProtectedRoutes>,
         children:[
             {path:"carlist",element:<CarList/>},
             {path:"cardetail",element:<CarDetail/>},
             {path:"getapidemo1",element:<GetApiDemo/>},
-            {path:"useeffectdemo",element:<UseEffectDemo/>}
+            {path:"useeffectdemo",element:<UseEffectDemo/>},
+            {path:"products",element:<ProductList/>}
 
         ]
     },
     {
-        path:"/admin",element:<AdminSidebar/>,
+        path:"/admin",element:
+        <ProtectedRoutes userRoles={["admin"]}>
+        <AdminSidebar/>,
+        </ProtectedRoutes>,
         children:[
             {path:"allusers",element:<AllUserList/>},
             {path:"createproduct",element:<CreateProductComponent/>}

@@ -138,4 +138,28 @@ axios global base usrl config:
 productComponent --> load --> useEffect ->fetchCat--->GET --> res -->[] -->useState
 
 
+send token from frontend5
+
+1)send token from every api call...
+2)global axios intercepter which will send token automatically
+<----------------------------------------------------------------->
+impl:
+protectedRoutes:
+
+
+All Products: -->admin
+myProduct -->seller product 
+
+xyz --> 50 products
+backenapi --> getProductBySellerId(req,res)=>{
+
+  params -->sellerId -->
+}
+
+
+
+prams ---> login =-->localstorage.id -->
+
+productsBy sellerid -> localStirage,,getItem("id")
+
 

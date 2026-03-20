@@ -30,12 +30,16 @@ export default function Login() {
         console.log(res.data.token) //-->permenet storage -->browser
         localStorage.setItem("token",res.data.token)
         localStorage.setItem("role",res.data.role)
+        localStorage.setItem('id',res.data.data._id)//optional
 
         if(res.data.role=="user" || res.data.role=="USER"){
           navigate("/user") //check this url must present in appRoutes for user
         }
         else if(res.data.role =="owner" || res.data.role=="owner"){
           navigate("/owner") //check this url must present in appRoutes for admin
+        }
+        else if(res.data.role =="admin" || res.data.role=="admin"){
+          navigate("/admin") //check this url must present in appRoutes for admin
         }
         else{
           toast.error("Invalid Role")
