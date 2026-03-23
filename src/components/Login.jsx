@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function Login() {
@@ -122,6 +122,13 @@ export default function Login() {
 
           </form>
 
+          <p className="text-center mt-4">
+            forgot password ???{" "}
+            <Link to="/forgotpassword" className="text-blue-500 hover:underline">
+              FORGOT PASSWORD
+            </Link>
+          </p>
+          
         </div>
       </div>
 
