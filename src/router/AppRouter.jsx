@@ -13,12 +13,14 @@ import ProtectedRoutes from "../components/ProtectedRoutes";
 import { ProductList } from "../components/user/ProductList";
 import { Forgotpassword } from "../components/forgotpassword";
 import { ResetPassword } from "../components/ResetPassword";
+import { BookingComponent } from "../components/BookingComponent";
 
 const router = createBrowserRouter([
     {path:"/",element:<Login/>},
     {path:"/signup",element:<Signup/>},
     {path:"/forgotpassword",element:<Forgotpassword/>},
     {path:"/resetpassword/:token",element:<ResetPassword/>},
+    {path:"/booking",element:<BookingComponent/>},
 
     
     {path:"/user",element:
